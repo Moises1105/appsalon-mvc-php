@@ -1,0 +1,44 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.footer {
+    padding: 1rem;
+    color: v.$blanco;
+   
+    &__grid {
+        @include m.tablet {
+            @include m.grid(3, 2rem);
+        }
+    }
+
+    &__widget {
+        text-align: center;
+        color: v.$blanco;
+      
+
+        &:nth-child(3) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    &__heading {
+        @include m.heading;
+        font-size: 2rem;
+        color: v.$blanco;
+       
+    }
+    &__texto {
+        line-height: 1.0;
+        font-size: 1.5rem;
+        color: v.$blanco;
+     
+    }
+    
+}
+.fin {
+    align-items: center;
+    color: v.$blanco;
+    font-family: v.$bold;
+    font-size: 1rem;
+}
