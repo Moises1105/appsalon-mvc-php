@@ -22,11 +22,11 @@ class Email {
         // Crear objeto email
         $mail = new PHPMailer();
         $mail->isSMTP();
-        $mail->Host = $_ENV['EMAIL_HOST'];
+        $mail->Host = 'sandbox.smtp.mailtrap.io';
         $mail->SMTPAuth = true;
-        $mail->Port = $_ENV['EMAIL_PORT'];
-        $mail->Username = $_ENV['EMAIL_USER'];
-        $mail->Password = $_ENV['EMAIL_PASS'];
+        $mail->Port = 2525;
+        $mail->Username = 'a8b4e024f89529';
+        $mail->Password = 'f40059cabbb5b8';
 
         $mail->setFrom('lizznailsbeauty@gmail.com');
          $mail->addAddress('lizznailsbeauty@gmail.com', 'lizznailsbeautycita.com');
@@ -38,7 +38,7 @@ class Email {
 
          $contenido = '<html>';
          $contenido .= "<p><strong>Hola " . $this->email .  "</strong> Has Creado tu cuenta en lizznailsbeautycita, solo debes confirmarla presionando el siguiente enlace</p>";
-         $contenido .= "<p>Presiona aquí: <a href='" . $_ENV['APP_URL'] . "/confirmar-cuenta?token=" . $this->token . "'>Confirmar Cuenta</a>";        
+         $contenido .= "<p>Presiona aquí: <a href='http://localhost:3000/confirmar-cuenta?token=" . $this->token . "'>Confirmar Cuenta</a>";        
          $contenido .= "<p>Si tu no solicitaste esta cuenta, puedes ignorar el mensaje</p>";
          $contenido .= '</html>';
          $mail->Body = $contenido;
@@ -51,11 +51,11 @@ class Email {
           // Crear objeto email
           $mail = new PHPMailer();
           $mail->isSMTP();
-          $mail->Host = $_ENV['EMAIL_HOST'];
+          $mail->Host = 'sandbox.smtp.mailtrap.io';
           $mail->SMTPAuth = true;
-          $mail->Port = $_ENV['EMAIL_PORT'];
-          $mail->Username = $_ENV['EMAIL_USER'];
-          $mail->Password = $_ENV['EMAIL_PASS'];
+          $mail->Port = 2525;
+          $mail->Username = 'a8b4e024f89529';
+          $mail->Password = 'f40059cabbb5b8';
   
           $mail->setFrom('lizznailsbeauty@gmail.com');
           $mail->addAddress('lizznailsbeauty@gmail.com', 'lizznailsbeautycita.com');
@@ -66,7 +66,7 @@ class Email {
           $mail->CharSet = 'UTF-8';
           $contenido = '<html>';
           $contenido .= "<p><strong>Hola " . $this->nombre .  "</strong> Has solicitado reestablecer tu Contraseña, sigue el siguiente enlace para hacerlo.</p>";
-          $contenido .= "<p>Presiona aquí: <a href='" . $_ENV['APP_URL'] . "/recuperar?token=" . $this->token . "'>Reestablecer Contraseña</a>";        
+          $contenido .= "<p>Presiona aquí: <a href='http://localhost:3000/recuperar?token=" . $this->token . "'>Reestablecer Contraseña</a>";        
           $contenido .= "<p>Si tu no solicitaste este cambio, puedes ignorar el mensaje</p>";
           $contenido .= '</html>';
           $mail->Body = $contenido;
