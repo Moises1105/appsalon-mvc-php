@@ -7,7 +7,9 @@ use MVC\Router;
 
 class ServicioController {
     public static function index(Router $router) {
-        session_start();
+        if(!isset($_SESSION)) {
+            session_start();
+      }
         isAdmin();
 
         $servicios = Servicio::all();
@@ -19,7 +21,9 @@ class ServicioController {
     }
 
     public static function crear(Router $router) {
-    session_start();
+        if(!isset($_SESSION)) {
+            session_start();
+      }
     isAdmin();
     $servicio = new Servicio;
     $alertas = [];

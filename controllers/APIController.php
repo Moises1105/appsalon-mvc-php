@@ -34,11 +34,6 @@ class APIController {
             $citaServicio = new CitaServicio($args);
             $citaServicio->guardar();
         }
-        
-        // Retornamos una respuesta
-        $respuesta = [
-            'resultado' => $resultado
-        ];
 
         echo json_encode(['resultado' => $resultado]);
     }
