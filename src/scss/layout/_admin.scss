@@ -9,7 +9,7 @@
         border-top: 1px solid v.$blanco;
         p{
             font-weight: v.$bold;
-            color: v.$azul;
+            color: v.$rosadopastel;
         }
 
         span,
@@ -20,21 +20,22 @@
 
         &:hover {
             transition: background-color 2500ms ease;  
-            background-color: darken(v.$azul, 35%);
+            background-color: darken(v.$rosadopastel, 35%);
         }
     }
 }
 
 .servicios {
-    @extend .citas;
+    padding: 1rem;
+    @extend.citas;
 
     .acciones {
         margin: 0;
     }
-    .boton {
-        color: v.$negro;
-    }
+    .boton,
     .boton-eliminar {
-        margin: 0;
+        
+        background-color: v.$rosadopastel;
+        margin: 0.5rem;
     }
 }

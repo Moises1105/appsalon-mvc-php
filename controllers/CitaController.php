@@ -4,10 +4,12 @@ namespace Controllers;
 
 use MVC\Router;
 
-class CitaContoller {
+class CitaController {
     public static function index(Router $router) {
 
-       session_start();
+      if(!isset($_SESSION)) {
+        session_start();
+  }
 
        isAuth();
 

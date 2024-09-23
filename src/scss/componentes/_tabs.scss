@@ -2,16 +2,15 @@
 @use 'base/mixins' as m;
 
 
-
 .tabs {
-  
+
     @include m.tablet {
         display: flex;
 
     }
 
     button {
-        background-color: v.$azul;
+        background-color: v.$rosadopastel;
         border: none;
         color: v.$blanco;
         padding: 1rem;
@@ -20,15 +19,16 @@
         margin-bottom: 1rem;
         text-transform: uppercase;
         font-weight: v.$bold;
-        transition: background-color 2000ms ease;
+        transition: background-color 3000ms ease;
 
         &:hover {
             cursor: pointer;
             background-color: darken(v.$negro, 10%);
         }
+
         &.actual {
-            background-color: darken(v.$gris, 10%);
-            color: v.$negro;
+            background-color: darken(v.$morado, 50%);
+             color: v.$blanco;
         }
     }
 }

@@ -11,16 +11,16 @@
     margin-bottom: 2rem;
     align-items: center;
     label {
-        flex: 0 0 10rem;
+         flex: 0 0 10rem;
     }
     input {
-        flex: 1;
-        border: none;
-        padding: calc(v.$separacion / 4);
-        border-radius: 1rem;
+         flex: 1;
+         border: none;
+         padding: calc(v.$separacion / 4);
+         border-radius: 1rem;
 
-        &:disabled {
-            background-color: lighten(v.$negro, 30%);
+         &:disabled {
+            background-color: lighten(v.$negro, 50%);
             color: v.$blanco;
             cursor: not-allowed;
         }

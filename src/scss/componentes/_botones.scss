@@ -2,9 +2,15 @@
 @use 'base/mixins' as m;
 
 .boton {
-    @include m.boton(v.$blanco, v.$negro);
+    @include m.boton(v.$rosadopastel, v.$blanco);
+    transition: background-color 3000ms ease;
+    &:hover {
+        background-color: darken(v.$negro, 10%);
+        color: v.$blanco;
+     }    
 }
 
 .boton-eliminar {
     @include m.boton(v.$rojo, v.$blanco);
 }
+

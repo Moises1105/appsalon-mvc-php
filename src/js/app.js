@@ -121,7 +121,7 @@ function paginaSiguiente() {
 async function consultarAPI() {
      
     try {
-        const url = 'http://localhost:3000/api/servicios';
+        const url = '/api/servicios';
         const resultado = await fetch(url);
         const servicios = await resultado.json();
         mostrarServicios(servicios);
@@ -141,7 +141,7 @@ function mostrarServicios(servicios) {
 
         const precioServicio = document.createElement('P');
         precioServicio.classList.add('precio-servicio');
-        precioServicio.textContent = `HNL ${precio}`;
+        precioServicio.textContent = `${precio}LPS`;
 
         
         const servicioDiv = document.createElement('DIV');
@@ -198,7 +198,7 @@ function seleccionarFecha() {
 
         if( [0].includes(dia) ) {
             e.target.value
-            mostrarAlerta('Domingo Cerrado solo Cita por medio de WhatsApp', 'error', '.formulario');
+            mostrarAlerta('Domingo Cerrado ', 'error', '.formulario');
         } else {
             cita.fecha = e.target.value;
         }
@@ -279,7 +279,7 @@ function mostrarResumen() {
         textoServicio.textContent = nombre;
 
         const precioServicio = document.createElement('P');
-        precioServicio.innerHTML = `<span>Precio:</span> LPS ${precio}`;
+        precioServicio.innerHTML = `<span>Precio:</span>${precio}LPS`;
 
         contenedorServicio.appendChild(textoServicio);
         contenedorServicio.appendChild(precioServicio);
@@ -347,22 +347,9 @@ async function reservarCita() {
 
     // console.log([...datos]);
 
-   
-
-     // Petición hacia la api
-     const url = 'http://localhost:3000/api/citas'
-
-     const respuesta = await fetch(url, {
-        method: 'POST',
-        body: datos
-    });
-
-    const resultado = await respuesta.json();
-        console.log(resultado);
-
         try {
             // Petición hacia la api
-            const url = 'http://localhost:3000/api/citas'
+            const url = '/api/citas'
             const respuesta = await fetch(url, {
                 method: 'POST',
                 body: datos

@@ -1,15 +1,19 @@
 @use 'base/variables' as v;
 @use 'base/mixins' as m;
 
-
 .contenedor-app {
     @include m.tablet {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         min-height: 100vh;
+
+        &:hover {
+            background-color: darken(v.$negro, 10%);
+            color: v.$blanco;
+         }    
     }
 
-    .imagen { 
+    .imagen {
         height: 30rem;
         background-image: url(../img/nailslogo.jpg);
         background-size: cover;
@@ -39,10 +43,12 @@
     }
 
     .boton {
-        @include m.boton(v.$azul, v.$blanco);
-        transition: background-color 2500ms ease;  
-        background-color: darken(v.$azul, 35%);
-        margin: 0;
+        @include m.boton(v.$rosadopastel, v.$blanco);
+        transition: background-color 3000ms ease;
+        &:hover {
+        background-color: darken(v.$negro, 10%);
+        color: v.$blanco;
+     }    
     }
 }
 
